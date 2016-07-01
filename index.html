@@ -1,0 +1,308 @@
+<html>
+	<head>
+		<title>Movie Maintenance</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+		<script scr="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+		<script scr="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/additional-methods.min.js"></script>
+		<script scr="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
+	
+	</head>
+
+	<body>
+		<div name="memberdiv" style="position: absolute; top: 30; left: 30; width: 600; height: 300; border-width: 2;">
+			<div id="mTable">
+
+			</div>
+			<div>
+			<form>
+				Search <br>
+				Studio: <input type='text' name='studiotag' id='studioS' size='30'/><br>
+				Title: <input type='text' name='titletag' id='titleS' size='30'/><br>
+				<input type="button" id="searchbtn" name="search" value="Search"/>
+				<input type="button" id="clearbtn" name="cl" value="Clear Search"/>
+			</form>
+		</div>
+			<input type="button" id="addbtn" name="addbutton" value="Add Movie"/>
+			<br>
+		<div id="editPanel" style="display:none; position:absolute; left: 30;" movieid=-1>
+		  <form id="form1">
+			Title: <input type='text' name='title1' id='title' size='40' class='txtFields' required/><br>
+			Year: <input type='number' name='year1' id='year' size='10' class='txtFields' required/><br>
+			Studio: <input type='text' name='studio1' id='studio' size='30' class='txtFields'/><br>
+			Price: <input type='number' name='price1' id='price' size='15'class='txtFields' required/><br>
+			<input type="submit" id="btnSave" class='onEdit' value="Save"><input type="button" id="btnCancel" class='onEdit' value="Cancel">
+			</form>
+		</div>	
+		</div>
+
+		
+		
+		
+		<script>
+
+				function save(){
+
+					//validation
+					//if(valid(form))
+					console.log("validate");
+					$('#form1').validate({
+						rules: {
+							title1 : {
+								required: true
+							},
+							year1 : {
+								required: true,
+								maxlength: 4,
+								minlength: 4, 
+								number: true
+							},
+							price1 : {
+								required: true,
+								number: true,
+								maxlength: 6, 
+								minlength: 0
+							}
+						},
+      					  submitHandler: function (form) { 
+      					  	 console.log("validation success");
+         					 
+         					 if($("#editPanel").attr("movieId")!=-1){
+         					 	saveEdit($("#editPanel").attr("movieId"));
+         					 }
+         					 else
+         					 {
+         					 	saveSub();
+         					 }
+       					     return false;
+        			}
+
+					})
+
+
+					
+
+				}
+
+
+			$( document ).ready(function() {
+				unmute();
+				$(".editbtn").click(editGet);
+				$("#btnSave").click(save);
+				$("#btnCancel").click(cancel);
+				$("#addbtn").click(add);
+				$(".deletebtn").click(delet);
+				$("#searchbtn").click(search);
+				$("#clearbtn").click(getTable);
+				getTable();
+   			 	console.log( "Set up made!" );
+			});
+
+				function search(){
+
+					title = $("#titleS").val();
+					studio = $("#studioS").val();
+					
+					
+					if(title != "" && studio != ""){
+						$.ajax({
+						  url: "api/index.php/?search_title="+title+"&search_studio="+studio,
+						  data: "",
+						  success: createTable,
+						  dataType: "json"
+						});
+					}
+					else if(title != ""){
+						$.ajax({
+						  url: "api/index.php/?search_title="+title,
+						  data: "",
+						  success: createTable,
+						  dataType: "json"
+						});
+					}
+					else
+					{
+						$.ajax({
+						  url: "api/index.php/?search_studio="+studio,
+						  data: "",
+						  success: createTable,
+						  dataType: "json"
+						});
+					}
+
+				}
+	
+				function getTable(){
+					console.log("getTable");
+					$("#titleS").val("");
+					$("#studioS").val("");
+					$.ajax({
+						  url: "api/index.php/?get_all='true'",
+						  data: "",
+						  success: createTable,
+						  dataType: "json"
+						});
+
+				}
+
+				function createTable(db){
+
+					console.log("createTable");
+
+					table = '<table "id="maintable" border="3"><th>Title</th><th>Year</th><th>Studio</th><th>Price</th><th>Actions</th>';
+
+					//for loop for table
+					for(var i = 0; i < db.length; i++){
+
+						m = db[i];
+						table+= "<tr><td>" + m["title"] + "</td><td>" + m["year"] + "</td><td>" + m["studio"] + "</td><td>" + m["price"] + "</td>";
+
+						table+= "<td><input id='editbtn' type='button' value='edit' class='editbtn' movieId='"+m["id"]+"' ><input id='deletebtn' type='button' value='delete' class='deletebtn' movieId='"+m["id"]+"'></td></tr>";
+					}
+
+				    table += '</table>';
+				    $("#mTable").html(table);
+				    reClickify();
+				}
+
+				function reClickify(){
+					$(".editbtn").click(editGet);
+					$(".deletebtn").click(delet);
+					console.log("Buttons registered");
+				}
+
+
+				function editGet(){
+					console.log("edit");
+					mute();
+					id = {"id": $(this).attr("movieId")};
+					$.ajax({
+						  type: "GET",
+						  url: "api/index.php/?id="+$(this).attr("movieId"),
+						  success: edit,
+						  dataType: "json"
+						});
+					
+				
+				}
+
+				function edit(db){
+					console.log("edit2")
+						m = db[0];
+						$("#title").val(m["title"]);
+						$("#year").val(m["year"]);
+						$("#studio").val(m["studio"]);
+						$("#price").val(m["price"]);
+					$("#editPanel").attr("movieId",m["id"]);
+					$("#editPanel").show();
+				}
+
+				function add(){
+					console.log("add");
+					$("#editPanel").show();
+					mute();
+					//loadList();
+
+				}
+
+				function delet(){
+				
+					//make call to delete.php
+					id = $(this).attr("movieId");
+					$.ajax({
+						  type: "DELETE",
+						  url: "api/index.php/?id="+id, 
+						  success: getTable,
+						  dataType: "text"
+						});
+					console.log("delete!");
+				}
+
+				function cancel(){
+					//$(".editField").val();
+					$("#editPanel").hide();
+					$("#editPanel").attr("movieId",-1);
+					unmute();
+					console.log("cancel");
+				}
+
+				function saveEdit(id){
+					$("#editPanel").hide();
+
+					
+					title = $("#title").val();
+				    year  = $("#year").val();
+					studio = $("#studio").val();
+				    price = $("#price").val();
+
+				    data =  {
+				    "title": $("#title").val(),
+				    "year": $("#year").val(), 
+					"studio": $("#studio").val(),
+				    "price": $("#price").val()}
+				    ;
+
+					
+					$("#title").val("");
+					$("#year").val("");
+					$("#studio").val("");
+					$("#price").val("");
+					$("#editPanel").attr("movieId",-1);	
+
+					unmute();
+					console.log("submit");
+					$.ajax({
+						  type: "PUT",
+						  url: "api/index.php/?id="+id+"&title="+title+"&year="+year+"&studio="+studio+"&price="+price,
+						  data: data, 
+						  success: getTable,
+						  dataType: "text"
+						});	
+				}
+
+				
+				function saveSub(){
+
+					$("#editPanel").hide();
+
+				
+					data = {
+							"title": $("#title").val(),
+							"year": $("#year").val(), 
+							"studio": $("#studio").val(),
+							"price": $("#price").val()
+							};
+
+					$("#title").val("");
+					$("#year").val("");
+					$("#studio").val("");
+					$("#price").val("");
+					console.log(data);
+					unmute();
+					console.log("submit");
+					$.ajax({
+						  type: "POST",
+						  url: "api/index.php",
+						  data: data, 
+						  success: getTable,
+						  dataType: ""
+						});
+				}
+
+				function mute(){
+					//disable buttons
+					$(".editbtn").attr('disabled','disabled');
+					$(".deletebtn").attr('disabled','disabled');
+					$("#addbtn").attr('disabled','disabled');
+				}
+
+				function unmute(){
+					//un-disable buttons
+					$(".editbtn").removeAttr('disabled');
+					$(".deletebtn").removeAttr('disabled');
+					$("#addbtn").removeAttr('disabled');
+				}
+		
+		</script>
+	</body>
+</html>

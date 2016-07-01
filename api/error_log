@@ -1,0 +1,59 @@
+[11-Mar-2016 04:25:47] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:32:26] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:32:38] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:35:42] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:35:55] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:36:09] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:36:37] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:37:13] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:37:30] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:38:33] PHP Parse error:  syntax error, unexpected '[' in /home7/bradentc/public_html/AS9/api/index.php on line 94
+[11-Mar-2016 04:40:46] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (28000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home7/bradentc/public_html/AS9/api/index.php on line 15
+[11-Mar-2016 04:50:05] PHP Parse error:  syntax error, unexpected $end in /home7/bradentc/public_html/AS9/api/index.php on line 290
+[11-Mar-2016 04:52:49] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[11-Mar-2016 04:54:14] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[11-Mar-2016 04:54:27] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[11-Mar-2016 04:54:30] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[11-Mar-2016 04:55:03] PHP Fatal error:  Call to undefined function  fetch_assoc() in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[11-Mar-2016 12:56:11] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[11-Mar-2016 12:56:21] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[22-Mar-2016 01:02:43] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[22-Mar-2016 01:02:43] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[31-Mar-2016 01:06:34] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[31-Mar-2016 01:06:35] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[02-Apr-2016 01:01:00] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[02-Apr-2016 01:01:01] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[03-Apr-2016 01:09:08] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[03-Apr-2016 01:09:08] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[04-Apr-2016 01:02:20] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[04-Apr-2016 01:02:20] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[05-Apr-2016 01:01:11] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[05-Apr-2016 01:01:11] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[07-Apr-2016 01:06:09] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[07-Apr-2016 01:06:09] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[08-Apr-2016 01:04:36] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[08-Apr-2016 01:04:38] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[09-Apr-2016 01:14:07] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[09-Apr-2016 01:14:08] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[10-Apr-2016 01:05:57] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[10-Apr-2016 01:05:58] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[03-May-2016 01:13:22] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[03-May-2016 01:13:22] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[05-May-2016 01:15:38] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[05-May-2016 01:15:38] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[07-May-2016 01:06:29] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[07-May-2016 01:06:29] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[17-May-2016 01:14:33] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[17-May-2016 01:14:33] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[31-May-2016 01:11:48] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[31-May-2016 01:11:48] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[01-Jun-2016 01:06:36] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[01-Jun-2016 01:06:36] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[06-Jun-2016 01:30:39] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[06-Jun-2016 01:30:39] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[16-Jun-2016 01:08:38] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[16-Jun-2016 01:08:38] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[19-Jun-2016 01:10:38] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[19-Jun-2016 01:10:39] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[28-Jun-2016 01:13:33] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
+[28-Jun-2016 01:13:33] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home7/bradentc/public_html/AS9/api/index.php on line 92
